@@ -20,7 +20,6 @@ Most of what I make is open source, local-first, and designed to leave people in
 
 ## 📫 Find me
 
-- Browse my work here on [GitHub](https://github.com/r3dbars)
 - Follow what I'm building on [X / Twitter — @betkerbuilds](https://x.com/betkerbuilds)
 - Connect with me on [LinkedIn](https://www.linkedin.com/in/justinbetker)
 - Portfolio: **justinbetker.com** *(currently being built)*
