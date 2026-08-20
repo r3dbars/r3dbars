@@ -2,8 +2,6 @@
 
 By day, I'm a Principal GTM Engineer at [Jamf](https://www.jamf.com/). Outside of work, I build small OSS projects and macOS apps for fun!
 
-I'm voice-pilled: I love audio, anything that listens, speaks, transcribes and makes computers feel a little more human.
-
 It's nice to meet you!
 
 ## 🛠️ What I'm working on
