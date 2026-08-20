@@ -15,4 +15,3 @@ By day, I'm a Principal GTM Engineer at [Jamf](https://www.jamf.com/). Outside o
 
 - Follow what I'm building on [X / Twitter — @betkerbuilds](https://x.com/betkerbuilds)
 - Connect with me on [LinkedIn](https://www.linkedin.com/in/justinbetker)
-- Portfolio: **justinbetker.com** *(currently being built)*
