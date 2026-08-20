@@ -2,7 +2,6 @@
 
 By day, I'm a Principal GTM Engineer at [Jamf](https://www.jamf.com/). Outside of work, I build small OSS projects and macOS apps for fun!
 
-It's nice to meet you!
 
 ## 🛠️ What I'm working on
 
