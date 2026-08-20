@@ -11,10 +11,6 @@ By day, I'm a Principal GTM Engineer at [Jamf](https://www.jamf.com/). Outside o
 -  [Recite](https://github.com/r3dbars/recite) — local text-to-speech for Mac, without cloud voice APIs
 -  [Unspool](https://github.com/r3dbars/Unspool) — a tiny morning-pages app that keeps your writing as markdown.
 
-I'm also exploring personal private autocomplete and durable, file-based memory for people and agents with my 2nd brain.
-
-Most of what I make is open source, local-first, and designed to leave people in control of their own files/data!
-
 ## 📫 Find me
 
 - Follow what I'm building on [X / Twitter — @betkerbuilds](https://x.com/betkerbuilds)
