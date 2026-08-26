@@ -16,11 +16,35 @@ jobs:
           mapfile -t urls < <(grep -oE 'https?://[^)[:space:]>"]+' README.md | sort -u)
           fail=0
           for url in "${urls[@]}"; do
-            code=$(curl -sI -o /dev/null -w '%{http_code}' -L --max-time 20 "$url" || echo 000)
+            code=$(curl -sI -o /dev/null -w '%{http_code}' -L --max-time 20 \
+              -A "Mozilla/5.0 (compatible; r3dbars-linkcheck/1.0)" \
+              "$url" || echo 000)
             echo "$code  $url"
             case "$code" in
               200|301|302|303|307|308) ;;
+              405|999)
+                if [[ "$url" == *linkedin.com* ]]; then
+                  echo "OK  LinkedIn bot-block ($code) for $url"
+                else
+                  echo "FAIL $url"
+                  fail=1
+                fi
+                ;;
               *) echo "FAIL $url"; fail=1 ;;
             esac
           done
+          exit "$fail"
+
+      - name: Check README local images exist
+        run: |
+          set -euo pipefail
+          fail=0
+          while IFS= read -r path; do
+            if [[ ! -f "$path" ]]; then
+              echo "FAIL missing local image $path"
+              fail=1
+            else
+              echo "OK  $path"
+            fi
+          done < <(grep -oE '\(assets/[^)]+\)' README.md | tr -d '()')
           exit "$fail"
