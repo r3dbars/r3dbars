@@ -44,9 +44,5 @@ Local-first: files on disk, not a database you rent.
 
 ---
 
-## What I'm looking for
-
-Open to **senior IC / product-engineering** roles on **Mac, on-device AI, or devtools**.
-GTM is the day job; GitHub is the builder proof.
 
 [X / Twitter — @betkerbuilds](https://x.com/betkerbuilds) · [LinkedIn](https://www.linkedin.com/in/justinbetker)
