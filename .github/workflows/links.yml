@@ -23,8 +23,12 @@ jobs:
             case "$code" in
               200|301|302|303|307|308) ;;
               403|405|999)
-                if [[ "$url" == *linkedin.com* || "$url" == *x.com* || "$url" == *twitter.com* ]]; then
-                  echo "OK  bot-block ($code) for $url"
+                host="${url#*://}"
+                host="${host%%/*}"
+                host="${host%%:*}"
+                host="${host#www.}"
+                if [[ "$host" == linkedin.com || "$host" == x.com || "$host" == twitter.com ]]; then
+                  echo "OK  bot-block ($code) for $host"
                 else
                   echo "FAIL $url"
                   fail=1
