@@ -24,3 +24,17 @@ jobs:
             esac
           done
           exit "$fail"
+
+      - name: Check README local images exist
+        run: |
+          set -euo pipefail
+          fail=0
+          while IFS= read -r path; do
+            if [[ ! -f "$path" ]]; then
+              echo "FAIL missing local image $path"
+              fail=1
+            else
+              echo "OK  $path"
+            fi
+          done < <(grep -oE '\(assets/[^)]+\)' README.md | tr -d '()')
+          exit "$fail"
