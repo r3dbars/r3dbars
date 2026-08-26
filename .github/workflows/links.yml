@@ -16,10 +16,20 @@ jobs:
           mapfile -t urls < <(grep -oE 'https?://[^)[:space:]>"]+' README.md | sort -u)
           fail=0
           for url in "${urls[@]}"; do
-            code=$(curl -sI -o /dev/null -w '%{http_code}' -L --max-time 20 "$url" || echo 000)
+            code=$(curl -sI -o /dev/null -w '%{http_code}' -L --max-time 20 \
+              -A "Mozilla/5.0 (compatible; r3dbars-linkcheck/1.0)" \
+              "$url" || echo 000)
             echo "$code  $url"
             case "$code" in
               200|301|302|303|307|308) ;;
+              999)
+                if [[ "$url" == *linkedin.com* ]]; then
+                  echo "OK  LinkedIn bot-block (999) for $url"
+                else
+                  echo "FAIL $url"
+                  fail=1
+                fi
+                ;;
               *) echo "FAIL $url"; fail=1 ;;
             esac
           done
