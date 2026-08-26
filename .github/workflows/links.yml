@@ -1,0 +1,26 @@
+name: Links
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  markdown:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check README http links
+        run: |
+          set -euo pipefail
+          mapfile -t urls < <(grep -oE 'https?://[^)[:space:]>"]+' README.md | sort -u)
+          fail=0
+          for url in "${urls[@]}"; do
+            code=$(curl -sI -o /dev/null -w '%{http_code}' -L --max-time 20 "$url" || echo 000)
+            echo "$code  $url"
+            case "$code" in
+              200|301|302|303|307|308) ;;
+              *) echo "FAIL $url"; fail=1 ;;
+            esac
+          done
+          exit "$fail"
