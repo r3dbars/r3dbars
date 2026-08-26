@@ -22,9 +22,9 @@ jobs:
             echo "$code  $url"
             case "$code" in
               200|301|302|303|307|308) ;;
-              999)
+              405|999)
                 if [[ "$url" == *linkedin.com* ]]; then
-                  echo "OK  LinkedIn bot-block (999) for $url"
+                  echo "OK  LinkedIn bot-block ($code) for $url"
                 else
                   echo "FAIL $url"
                   fail=1
