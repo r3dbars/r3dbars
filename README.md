@@ -1,6 +1,6 @@
 # Justin Betker
 
-I build useful projects with AI.
+I build useful software with AI.
 
 
 - [**Tilde**](https://github.com/r3dbars/tilde) — a Mac keyboard that finishes your sentences. Works in every app. Nothing you type leaves your Mac.
